@@ -21,12 +21,12 @@ const Project = () => {
           <ProjectCard
             title="Project Conduit"
             imageSrc={ProjetConduit}
-            description={`Senior Design Project
+            description={`Data Pipeline Project
           
-          This project goal was to redesign and build a website framework for protein modification data. 
-          The new version of P3DB redesigned and generalized to host and display data sets in a more flexible, comprehensive, and secure way. 
-          
-          Python-Django is used to connect the front-end design such as integration with Bootstrap and the backend with flexible database solutions both Mysql and MongoDB.`}
+          Focused on automating data extraction, aggregation, analysis, and reporting for Nebraska Public Media, centralizing NPM's data into one centralized location of truth, towards the goal of making reporting more accurate, credible, and durable.
+
+          Tech Stack:
+          Apache Airflow, Python, R, PySpark, Google BigQuery, Google Cloud Storage, Google DataProc, Google Data Studio, Shiny, and many more`}
           />
           <ProjectCard
             title="pyP3DB"
@@ -42,13 +42,13 @@ const Project = () => {
             title={`TBF Financial
           Financial Management System`}
             imageSrc={TBF}
-            description={`Senior Design Project
+            description={`OOP Class Project
           
-          This project goal was to redesign and build a website framework for protein modification data. 
-          The new version of P3DB redesigned and generalized to host and display data sets in a more flexible, comprehensive, and secure way. 
-          
-          Python-Django is used to connect the front-end design such as integration with Bootstrap and the backend with flexible database solutions both Mysql and MongoDB.`}
-          />
+            The multi-tier system uses object-oriented programming in Java, keeping TBF’s business model in mind. 
+            The program communicates between the classes and generates a summary eport, and a detailed report for each portfolio.
+            
+            The different objects in the program are represented through tables in MySQL with foreign key relationships. To connect classes with the MySQL database JDBC API is used.`}
+            />
         </div>
       </div>
     </div>

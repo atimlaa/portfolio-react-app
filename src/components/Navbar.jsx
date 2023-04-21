@@ -16,27 +16,27 @@ const Navbar = () => {
 
       {/* menu */}
       <ul className="hidden md:flex">
-        <li>
+        <li className="cursor-pointer">
           <Link to="home" smooth={true} duration={500}>
             Home
           </Link>
         </li>
-        <li>
+        <li className="cursor-pointer">
           <Link to="about" smooth={true} duration={500}>
             About
           </Link>
         </li>
-        <li>
+        <li className="cursor-pointer">
           <Link to="skills" smooth={true} duration={500}>
             Skills
           </Link>
         </li>
-        <li>
+        <li className="cursor-pointer">
           <Link to="projects-container" smooth={true} duration={500}>
             Projects
           </Link>
         </li>
-        <li>
+        <li className="cursor-pointer">
           <Link to="contact" smooth={true} duration={500}>
             Contact
           </Link>
