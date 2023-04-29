@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio-react-app/static/css/main.4a10bc71.css",
-    "main.js": "/portfolio-react-app/static/js/main.1c42a63c.js",
+    "main.css": "/portfolio-react-app/static/css/main.3dabfa64.css",
+    "main.js": "/portfolio-react-app/static/js/main.0c328a02.js",
     "static/media/pyp3db_logo.png": "/portfolio-react-app/static/media/pyp3db_logo.8747578b979b0446ce59.png",
     "static/media/project_conduit_logo.png": "/portfolio-react-app/static/media/project_conduit_logo.364e271fa64bbafa686d.png",
     "static/media/tbf_logo.png": "/portfolio-react-app/static/media/tbf_logo.b1a8c93abb37bcb2e65f.png",
     "static/media/logo2.png": "/portfolio-react-app/static/media/logo2.8d357776aef16831c20e.png",
     "index.html": "/portfolio-react-app/index.html",
-    "main.4a10bc71.css.map": "/portfolio-react-app/static/css/main.4a10bc71.css.map",
-    "main.1c42a63c.js.map": "/portfolio-react-app/static/js/main.1c42a63c.js.map"
+    "main.3dabfa64.css.map": "/portfolio-react-app/static/css/main.3dabfa64.css.map",
+    "main.0c328a02.js.map": "/portfolio-react-app/static/js/main.0c328a02.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a10bc71.css",
-    "static/js/main.1c42a63c.js"
+    "static/css/main.3dabfa64.css",
+    "static/js/main.0c328a02.js"
   ]
 }
