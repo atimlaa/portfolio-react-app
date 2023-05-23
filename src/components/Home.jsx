@@ -1,10 +1,13 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
+import Resume from "../assets/resume.pdf";
+
 
 const Home = () => {
+
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "/files/resume.pdf";
+    link.href = Resume;    //"/files/resume.pdf";
     link.download = "resume.pdf";
     document.body.appendChild(link);
     link.click();
