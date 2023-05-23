@@ -4,7 +4,7 @@ const Skills = () => {
   return (
     <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300'>
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
+      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center h-full'>
         <div>
           <h1 className='text-4xl font-bold inline border-b-4 border-red-500 mb-8'>Skills</h1>
           <p className='py-4'>The technologies I have worked with:</p>

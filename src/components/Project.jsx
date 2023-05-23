@@ -8,11 +8,11 @@ const Project = () => {
   return (
     <div
       name="projects-container"
-      className="w-full h-screen bg-[#0a192f] text-gray-300"
+      className="w-full bg-[#0a192f] text-gray-300 py-8"
     >
       <div className="max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full">
         <div className="sm:text-left">
-          <p className="text-4xl font-bold inline border-b-4 border-pink-600">
+          <p className="text-4xl font-bold inline border-b-4 border-red-500 mb-8">
             Projects
           </p>
         </div>
