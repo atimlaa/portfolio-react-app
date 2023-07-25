@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import WorkExperience from "./components/WorkExperience";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 
@@ -13,6 +14,7 @@ function App() {
      <Home />
      <About />
      <Skills />
+     <WorkExperience />
      <Project />
      <Contact />
      <Footer />
