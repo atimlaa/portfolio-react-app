@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/portfolio-react-app/static/css/main.d0feac3a.css",
-    "main.js": "/portfolio-react-app/static/js/main.1940426b.js",
+    "main.js": "/portfolio-react-app/static/js/main.e936576e.js",
     "static/media/resume.pdf": "/portfolio-react-app/static/media/resume.099067c10072d65bc7b0.pdf",
-    "static/media/pyp3db_logo.png": "/portfolio-react-app/static/media/pyp3db_logo.8747578b979b0446ce59.png",
-    "static/media/project_conduit_logo.png": "/portfolio-react-app/static/media/project_conduit_logo.364e271fa64bbafa686d.png",
     "static/media/tbf_logo.png": "/portfolio-react-app/static/media/tbf_logo.b1a8c93abb37bcb2e65f.png",
+    "static/media/pyp3db_logo.png": "/portfolio-react-app/static/media/pyp3db_logo.0b966b6c441d5a978ad3.png",
     "static/media/logo2.png": "/portfolio-react-app/static/media/logo2.8d357776aef16831c20e.png",
+    "static/media/project_conduit_logo.png": "/portfolio-react-app/static/media/project_conduit_logo.2c382be69db95ae0c689.png",
     "index.html": "/portfolio-react-app/index.html",
     "main.d0feac3a.css.map": "/portfolio-react-app/static/css/main.d0feac3a.css.map",
-    "main.1940426b.js.map": "/portfolio-react-app/static/js/main.1940426b.js.map"
+    "main.e936576e.js.map": "/portfolio-react-app/static/js/main.e936576e.js.map"
   },
   "entrypoints": [
     "static/css/main.d0feac3a.css",
-    "static/js/main.1940426b.js"
+    "static/js/main.e936576e.js"
   ]
 }
