@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import ProjetConduit from "../assets/project_conduit_logo.png";
 import pyP3DB from "../assets/pyp3db_logo.png";
@@ -6,72 +7,91 @@ import TBF from "../assets/tbf_logo.png";
 import SuperBowl from "../assets/super_bowl.png";
 import ReportDashboard from "../assets/report_dashboard.png";
 
+const projects = [
+  {
+    title: "Project Conduit",
+    imageSrc: ProjetConduit,
+    showGithub: false,
+    description: `Data Pipeline Project
+
+Focused on automating data extraction, aggregation, analysis, and reporting for Nebraska Public Media — centralizing NPM's data into one source of truth, making reporting more accurate, credible, and durable.
+
+Tech Stack: Apache Airflow, Python, R, PySpark, Google BigQuery, Google Cloud Storage, Google DataProc, Shiny`,
+  },
+  {
+    title: "Monthly Report App",
+    imageSrc: ReportDashboard,
+    showGithub: false,
+    description: `Report Automation Dashboard
+
+Enhances the efficiency of Nebraska Public Media's monthly reporting process by delivering a holistic view of KPIs and metrics through an integrated dashboard consolidating data from diverse platforms.
+
+Tech Stack: R, Shiny, Golem, Bootstrap, Google BigQuery, Google Cloud Storage, renv, Github Actions`,
+  },
+  {
+    title: "Super Bowl Data Analysis",
+    imageSrc: SuperBowl,
+    githubUrl: "https://github.com/atimlaa/super-bowl-data-analysis",
+    description: `Data Analysis Project
+
+Delves into Super Bowl history to generate insights into game outcomes, viewership trends, and halftime show performance through data visualization.
+
+Tech Stack: Python, pandas, pyplot, seaborn, Streamlit`,
+  },
+  {
+    title: "pyP3DB",
+    imageSrc: pyP3DB,
+    showGithub: false,
+    description: `Senior Design Project
+
+Redesigned and built a website framework for protein modification data in a flexible, comprehensive, and secure way using Django as the backbone.
+
+Tech Stack: Python-Django, Bootstrap, MySQL, MongoDB`,
+  },
+  {
+    title: "TBF Financial",
+    imageSrc: TBF,
+    githubUrl: "https://github.com/atimlaa/TBF-Financial-Financial-Management-System",
+    description: `OOP Class Project
+
+A multi-tier financial management system using object-oriented programming in Java, generating summary and detailed reports for each portfolio using a MySQL backend.
+
+Tech Stack: Java, MySQL, JDBC`,
+  },
+];
+
 const Project = () => {
   return (
-    <div
-      name="projects-container"
-      className="w-full bg-[#0a192f] text-gray-300 py-8"
-    >
-      <div className="max-w-[1000px] mx-auto flex flex-col justify-center w-full h-full">
-        <div className="sm:text-left">
-          <p className="text-4xl font-bold inline border-b-4 border-red-500 mb-8">
-            Projects
+    <div name="projects-container" className="w-full bg-[#0a192f] text-gray-300 py-32">
+      <div className="max-w-[1000px] mx-auto px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <p className="text-red-400 font-mono mb-2 text-sm tracking-wider">
+            03. what I've built
           </p>
-        </div>
+          <h2 className="text-4xl font-bold text-[#ccd6f6]">
+            Projects
+            <span className="block h-[3px] bg-red-500 mt-3 w-16" />
+          </h2>
+        </motion.div>
 
-        <div className="projects-row">
-          <ProjectCard
-            title="Project Conduit"
-            imageSrc={ProjetConduit}
-            description={`Data Pipeline Project
-          
-          Focused on automating data extraction, aggregation, analysis, and reporting for Nebraska Public Media, centralizing NPM's data into one centralized location of truth, towards the goal of making reporting more accurate, credible, and durable.
-
-          Tech Stack:
-          Apache Airflow, Python, R, PySpark, Google BigQuery, Google Cloud Storage, Google DataProc, Google Data Studio, Shiny, and many more`}
-          />
-          <ProjectCard
-            title="Monthly Report App"
-            imageSrc={ReportDashboard}
-            description={`Report Automation Dashboard
-          
-            This project aims to enhance the efficiency of Nebraska Public Media's monthly reporting process that delivers a holistic view of KPIs and metrics by developing an integrated dashboard.
-            
-            This will consolidate data from diverse platforms, including the Website, Mobile Apps, News, TV, Radio and PBS Passport audience,
-            integrating data sources through API connections, database queries, and advanced data extraction scripts. 
-
-            Tech Stack: R, Shiny, Golem, Bootstrap, Google BigQuery, Google Cloud Storage, renv, Github Actions and many more`}
-          />
-          <ProjectCard
-            title="Super Bowl Data Analysis"
-            imageSrc={SuperBowl}
-            description={`Data Analysis Project
-
-            This data science project delves into the Super Bowl, generating insights into game outcomes, viewership, and halftime shows.
-            
-            Tech Stack: Python (pandas, pyplot, seaborn), Streamlit`}
-          />
-          <ProjectCard
-            title="pyP3DB"
-            imageSrc={pyP3DB}
-            description={`Senior Design Project
-          
-          This project goal was to redesign and build a website framework for protein modification data. 
-          The new version of P3DB redesigned and generalized to host and display data sets in a more flexible, comprehensive, and secure way. 
-          
-          Python-Django is used to connect the front-end design such as integration with Bootstrap and the backend with flexible database solutions both Mysql and MongoDB.`}
-          />
-          <ProjectCard
-            title={`TBF Financial
-          Financial Management System`}
-            imageSrc={TBF}
-            description={`OOP Class Project
-          
-            The multi-tier system uses object-oriented programming in Java, keeping TBF’s business model in mind. 
-            The program communicates between the classes and generates a summary eport, and a detailed report for each portfolio.
-            
-            The different objects in the program are represented through tables in MySQL with foreign key relationships. To connect classes with the MySQL database JDBC API is used.`}
-            />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <ProjectCard {...project} />
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

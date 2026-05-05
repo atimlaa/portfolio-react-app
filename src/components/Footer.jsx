@@ -1,45 +1,14 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black p-4 mt-auto">
-      <p className="text-white text-center">Connect with me:</p>
-      <div className="flex justify-center p-2">
-        <a
-          href="https://www.facebook.com/aryan.timla/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white mx-2 hover:text-blue-600"
-        >
-          <FaFacebook size={25} />
-        </a>
-        <a
-          href="https://twitter.com/AryanTimla"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white mx-2 hover:text-sky-500"
-        >
-          <FaTwitter size={25} />
-        </a>
-        <a
-          href="https://www.instagram.com/aryan_timla/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white mx-2 hover:text-pink-500"
-        >
-          <FaInstagram size={25} />
-        </a>
-        <a
-          href="https://www.tiktok.com/@aryantimla"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white mx-2"
-        >
-          <FaTiktok size={25} />
-        </a>
+    <footer className="bg-black border-t border-white/5 py-8">
+      <div className="max-w-[1000px] mx-auto px-8 flex flex-col items-center gap-4">
+
+        <p className="text-gray-600 text-xs font-mono tracking-wider">
+          © {new Date().getFullYear()} Aryan Timla — Designed & Built with React
+        </p>
       </div>
-      <p className="text-white text-center">&copy; 2023 aryantimla</p>
     </footer>
   );
 };
