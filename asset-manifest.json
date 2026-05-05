@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio-react-app/static/css/main.d4b50661.css",
-    "main.js": "/portfolio-react-app/static/js/main.c1c89bb1.js",
-    "static/media/resume.pdf": "/portfolio-react-app/static/media/resume.81238b755de2b56fbc4c.pdf",
+    "main.css": "/portfolio-react-app/static/css/main.aaff0767.css",
+    "main.js": "/portfolio-react-app/static/js/main.f7d19eee.js",
+    "static/media/resume.pdf": "/portfolio-react-app/static/media/resume.e2ee2fbf978b2c9d3592.pdf",
     "static/media/tbf_logo.png": "/portfolio-react-app/static/media/tbf_logo.b1a8c93abb37bcb2e65f.png",
     "static/media/pyp3db_logo.png": "/portfolio-react-app/static/media/pyp3db_logo.0b966b6c441d5a978ad3.png",
     "static/media/logo2.png": "/portfolio-react-app/static/media/logo2.8d357776aef16831c20e.png",
     "static/media/project_conduit_logo.png": "/portfolio-react-app/static/media/project_conduit_logo.2c382be69db95ae0c689.png",
     "index.html": "/portfolio-react-app/index.html",
-    "main.d4b50661.css.map": "/portfolio-react-app/static/css/main.d4b50661.css.map",
-    "main.c1c89bb1.js.map": "/portfolio-react-app/static/js/main.c1c89bb1.js.map"
+    "main.aaff0767.css.map": "/portfolio-react-app/static/css/main.aaff0767.css.map",
+    "main.f7d19eee.js.map": "/portfolio-react-app/static/js/main.f7d19eee.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4b50661.css",
-    "static/js/main.c1c89bb1.js"
+    "static/css/main.aaff0767.css",
+    "static/js/main.f7d19eee.js"
   ]
 }
