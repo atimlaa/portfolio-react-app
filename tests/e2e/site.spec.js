@@ -79,6 +79,21 @@ test.describe("Above the fold", () => {
   });
 });
 
+test.describe("Resume", () => {
+  test("hero download and /files/resume.pdf both serve a PDF", async ({ page, request }) => {
+    await dismissBanner(page);
+    await page.goto("");
+    const link = page.getByRole("link", { name: "Download Resume" });
+    await expect(link).toHaveAttribute("download", "Aryan-Timla-Resume.pdf");
+    const href = await link.getAttribute("href");
+    for (const url of [href, "files/resume.pdf"]) {
+      const res = await request.get(url);
+      expect(res.status(), url).toBe(200);
+      expect((await res.body()).subarray(0, 5).toString(), url).toBe("%PDF-");
+    }
+  });
+});
+
 test.describe("Cookie banner", () => {
   test("does not interrupt a first visit while nothing needs consent", async ({ page }) => {
     await page.goto("");
