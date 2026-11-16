@@ -26,9 +26,10 @@ const PrivacyPolicy = () => {
           the only information the form asks for.
         </li>
         <li>
-          <strong className="text-[#ccd6f6]">Your cookie choice:</strong> one
-          value saved in your browser's local storage so the banner doesn't
-          keep reappearing. It never leaves your device. See the{" "}
+          <strong className="text-[#ccd6f6]">Your cookie choice:</strong> if
+          you open cookie settings and make a choice, one value is saved in
+          your browser's local storage to remember it. It never leaves your
+          device. See the{" "}
           <Link to="/cookies" className={a}>Cookie Policy</Link>.
         </li>
         <li>

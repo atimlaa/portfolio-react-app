@@ -80,27 +80,60 @@ test.describe("Above the fold", () => {
 });
 
 test.describe("Cookie banner", () => {
-  test("shows once, remembers the choice, and can be reopened", async ({ page }) => {
+  test("does not interrupt a first visit while nothing needs consent", async ({ page }) => {
+    await page.goto("");
+    await expect(page.getByRole("heading", { level: 1, name: "Aryan Timla." })).toBeVisible();
+    await page.waitForTimeout(800);
+    await expect(page.getByRole("region", { name: "Cookies & privacy" })).toHaveCount(0);
+    expect(await page.evaluate(() => localStorage.getItem("cookie-consent"))).toBeNull();
+  });
+
+  test("opens from Cookie settings, takes focus, and remembers the choice", async ({ page }) => {
     await page.goto("");
     const banner = page.getByRole("region", { name: "Cookies & privacy" });
+    await page.getByRole("button", { name: "Cookie settings" }).click();
     await expect(banner).toBeVisible();
+    await expect(banner.getByRole("heading", { name: "Cookies & privacy" })).toBeFocused();
     await banner.getByRole("button", { name: "Essential only" }).click();
     await expect(banner).toBeHidden();
+    expect(await page.evaluate(() => localStorage.getItem("cookie-consent"))).toBe("essential");
 
     await page.reload();
     await page.waitForTimeout(500);
     await expect(banner).toBeHidden();
 
     await page.getByRole("button", { name: "Cookie settings" }).click();
-    await expect(banner).toBeVisible();
     await banner.getByRole("button", { name: "Accept" }).click();
     expect(await page.evaluate(() => localStorage.getItem("cookie-consent"))).toBe("accepted");
   });
 
+  test("Cookie Policy page can open the settings", async ({ page }) => {
+    await page.goto("cookies/");
+    await page.getByRole("button", { name: "Open cookie settings" }).click();
+    await expect(page.getByRole("region", { name: "Cookies & privacy" })).toBeVisible();
+  });
+
   test("sets no cookies", async ({ page, context }) => {
     await page.goto("");
+    await page.getByRole("button", { name: "Cookie settings" }).click();
     await page.getByRole("button", { name: "Accept" }).click();
     expect(await context.cookies()).toHaveLength(0);
+  });
+
+  test("first visit on mobile shows all three hero buttons", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== "mobile", "mobile only");
+    await page.goto("");
+    for (const name of [/Let's work together/, "View projects", "Download Resume"]) {
+      const link = page.getByRole("link", { name });
+      await expect(link).toBeInViewport({ ratio: 1 });
+      // Nothing (like a banner) is drawn on top of the button
+      const covered = await link.evaluate((el) => {
+        const r = el.getBoundingClientRect();
+        const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+        return !el.contains(hit);
+      });
+      expect(covered, `${name} is covered`).toBe(false);
+    }
   });
 });
 

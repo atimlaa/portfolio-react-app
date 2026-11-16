@@ -1,24 +1,33 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { getConsent, setConsent, onOpenConsentBanner } from "../consent";
+import { needsConsent, setConsent, onOpenConsentBanner } from "../consent";
 
 const btn =
   "px-4 py-2 rounded-lg text-sm font-mono tracking-wider border transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400";
 
 const CookieBanner = () => {
   const [open, setOpen] = useState(false);
+  // "auto" = opened on page load to ask; "manual" = opened from a settings button
+  const [openedBy, setOpenedBy] = useState(null);
   const headingRef = useRef(null);
 
   useEffect(() => {
-    if (!getConsent()) setOpen(true);
-    return onOpenConsentBanner(() => setOpen(true));
+    // Only interrupt a first visit when a non-essential service needs consent
+    if (needsConsent()) {
+      setOpenedBy("auto");
+      setOpen(true);
+    }
+    return onOpenConsentBanner(() => {
+      setOpenedBy("manual");
+      setOpen(true);
+    });
   }, []);
 
-  // When reopened from the footer, move focus into the banner
+  // When opened from a settings button, move focus into the banner
   useEffect(() => {
-    if (open && getConsent()) headingRef.current?.focus();
-  }, [open]);
+    if (open && openedBy === "manual") headingRef.current?.focus();
+  }, [open, openedBy]);
 
   const choose = (value) => {
     setConsent(value);
