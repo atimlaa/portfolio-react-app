@@ -16,6 +16,8 @@ const CookiePolicy = () => {
       <p>
         Short version: <strong className="text-[#ccd6f6]">this site sets no
         cookies</strong> and uses no analytics or advertising trackers.
+        Because there is nothing to agree to, you won't see a cookie banner
+        when you arrive.
       </p>
 
       <h2 className={h2}>What is stored in your browser</h2>
@@ -34,7 +36,7 @@ const CookiePolicy = () => {
             <tr>
               <td className={`${cell} font-mono`}>cookie-consent</td>
               <td className={cell}>Local storage (strictly necessary)</td>
-              <td className={cell}>Remembers your choice on the cookie banner</td>
+              <td className={cell}>Remembers your choice in cookie settings (only saved if you make one)</td>
               <td className={cell}>Until you clear your browser data</td>
             </tr>
           </tbody>
@@ -64,8 +66,9 @@ const CookiePolicy = () => {
 
       <h2 className={h2}>If this changes</h2>
       <p>
-        If I ever add analytics, it will only load after you choose "Accept",
-        and this page will list it.
+        If I ever add analytics, the banner will ask you on your first visit,
+        analytics will only load after you choose "Accept", and this page will
+        list it.
       </p>
     </LegalLayout>
   );

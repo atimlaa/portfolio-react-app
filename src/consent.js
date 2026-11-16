@@ -4,6 +4,12 @@
 // If you ever add analytics, load it only when hasConsent() is true, e.g.:
 //   if (hasConsent()) loadAnalytics();
 //   onConsentChange((value) => value === "accepted" && loadAnalytics());
+// …and add it to NON_ESSENTIAL_SERVICES so the banner asks first-time
+// visitors, and list it on the Privacy and Cookie pages.
+
+// Services that need the visitor's consent before they load.
+// Empty = nothing to ask about, so the banner only opens on request.
+export const NON_ESSENTIAL_SERVICES = [];
 
 const KEY = "cookie-consent"; // "accepted" | "essential"
 const EVENT = "cookie-consent-change";
@@ -27,6 +33,9 @@ export const setConsent = (value) => {
 };
 
 export const hasConsent = () => getConsent() === "accepted";
+
+// True only when there is something to consent to and no choice is saved yet
+export const needsConsent = () => NON_ESSENTIAL_SERVICES.length > 0 && !getConsent();
 
 export const onConsentChange = (fn) => {
   const handler = (e) => fn(e.detail);
