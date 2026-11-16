@@ -2,14 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+/* Ubuntu is self-hosted via @fontsource (imported in index.js) — no request to Google */
 
 @layer base {
+    html{
+        background-color: #0a192f;
+    }
     body{
         @apply font-[Ubuntu]
     }
     li{
         @apply px-5;
         @apply cursor-auto;
+    }
+    /* Clear, consistent keyboard focus indicator everywhere */
+    :focus-visible{
+        outline: 2px solid #f87171;
+        outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce){
+        *, *::before, *::after{
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
     }
 }

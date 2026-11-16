@@ -16,7 +16,7 @@ const facts = [
 
 const About = () => {
   return (
-    <div name='about' className='w-full min-h-screen bg-[#0a192f] text-gray-300 py-32'>
+    <section name='about' id='about' className='w-full min-h-screen bg-[#0a192f] text-gray-300 py-32'>
       <div className='max-w-[1000px] mx-auto px-8'>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -72,7 +72,7 @@ const About = () => {
             className='space-y-6'
           >
             {/* Stats row */}
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-2 gap-4'>
               {stats.map(({ value, label }, i) => (
                 <motion.div
                   key={label}
@@ -83,7 +83,7 @@ const About = () => {
                   className='bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center hover:border-red-500/40 transition-colors duration-300'
                 >
                   <p className='text-3xl font-bold text-red-400'>{value}</p>
-                  <p className='text-xs text-gray-500 mt-1 leading-tight'>{label}</p>
+                  <p className='text-xs text-gray-400 mt-1 leading-tight'>{label}</p>
                 </motion.div>
               ))}
             </div>
@@ -103,7 +103,7 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,0 +1,29 @@
+{
+  "siteUrl": "https://atimlaa.github.io/portfolio-react-app",
+  "siteName": "Aryan Timla",
+  "ogImage": "/og-image.png",
+  "ogImageAlt": "Aryan Timla — Applications Developer and Data Analyst in Lincoln, Nebraska",
+  "pages": {
+    "/": {
+      "title": "Aryan Timla — Applications Developer & Data Analyst | Lincoln, NE",
+      "description": "Aryan Timla is an applications developer and data analyst in Lincoln, Nebraska, working with SAP ABAP, Fiori/SAPUI5, React, Python and cloud data pipelines. See projects, skills and resume."
+    },
+    "/privacy": {
+      "title": "Privacy Policy | Aryan Timla",
+      "description": "How Aryan Timla's portfolio site handles personal data: what the contact form collects, who processes it, how long it is kept, and how to request deletion."
+    },
+    "/terms": {
+      "title": "Terms and Conditions | Aryan Timla",
+      "description": "Terms for using Aryan Timla's portfolio website, including content ownership, external links, disclaimers and governing law."
+    },
+    "/cookies": {
+      "title": "Cookie Policy | Aryan Timla",
+      "description": "This site sets no tracking cookies. Learn what is stored in your browser, why, and how to change your choice."
+    },
+    "/404": {
+      "title": "Page Not Found | Aryan Timla",
+      "description": "The page you were looking for doesn't exist. Head back to Aryan Timla's portfolio.",
+      "noindex": true
+    }
+  }
+}

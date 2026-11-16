@@ -62,7 +62,7 @@ Tech Stack: Java, MySQL, JDBC`,
 
 const Project = () => {
   return (
-    <div name="projects-container" className="w-full bg-[#0a192f] text-gray-300 py-32">
+    <section name="projects-container" id="projects-container" className="w-full bg-[#0a192f] text-gray-300 py-32">
       <div className="max-w-[1000px] mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -94,7 +94,7 @@ const Project = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

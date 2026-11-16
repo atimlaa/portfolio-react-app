@@ -29,7 +29,9 @@ const ProjectCard = ({ title, imageSrc, description, showGithub = true, githubUr
       <div className="overflow-hidden h-44 bg-[#0d1f38] flex items-center justify-center p-4 border-b border-white/5">
         <img
           src={imageSrc}
-          alt={title}
+          alt={`${title} project logo`}
+          loading="lazy"
+          decoding="async"
           className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
       </div>
@@ -42,15 +44,17 @@ const ProjectCard = ({ title, imageSrc, description, showGithub = true, githubUr
           </p>
           {showGithub && (
             githubUrl ? (
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${title} source code on GitHub (opens in new tab)`} onClick={(e) => e.stopPropagation()}>
                 <FaGithub
-                  className="text-gray-600 hover:text-red-400 transition-colors duration-300 shrink-0"
+                  aria-hidden="true"
+                  className="text-gray-400 hover:text-red-400 transition-colors duration-300 shrink-0"
                   size={18}
                 />
               </a>
             ) : (
               <FaGithub
-                className="text-gray-600 group-hover:text-red-400 transition-colors duration-300 shrink-0"
+                aria-hidden="true"
+                className="text-gray-500 group-hover:text-red-400 transition-colors duration-300 shrink-0"
                 size={18}
               />
             )
@@ -71,7 +75,7 @@ const ProjectCard = ({ title, imageSrc, description, showGithub = true, githubUr
             {tech.slice(0, 5).map((t) => (
               <span
                 key={t}
-                className="text-[10px] text-red-400/80 font-mono bg-red-500/10 px-2 py-1 rounded"
+                className="text-[10px] text-red-300 font-mono bg-red-500/10 px-2 py-1 rounded"
               >
                 {t.length > 14 ? t.slice(0, 14) + "…" : t}
               </span>

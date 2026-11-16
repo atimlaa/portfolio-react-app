@@ -66,3 +66,22 @@ The portfolio React app is open-source and released under the [MIT License](LICE
 ## Acknowledgements
 
 This portfolio React app was developed using various open-source libraries and tools. Special thanks to the contributors of these projects for their valuable contributions.
+
+
+## Testing
+
+```
+yarn build
+yarn test:e2e        # Playwright: SEO tags, 404, cookie banner, keyboard, form, axe accessibility
+```
+
+First time only: `npx playwright install chromium`.
+
+## SEO and pages
+
+- Per-page title/description lives in `src/seo/pages.json`. `yarn build` runs `scripts/prerender-meta.js`, which writes a static HTML file per route (`privacy/`, `terms/`, `cookies/`), `404.html`, and `sitemap.xml`.
+- To add a page: add a route in `src/App.js`, call `usePageMeta("/your-path")` in the component, and add an entry to `pages.json`.
+
+## Claude Code skills
+
+`.claude/skills/` includes **impeccable** (design critique/polish) and **playwright-cli** (browser testing). Run `scripts/install-skills.sh` to also install **design-taste-frontend** (taste) and update the others. The advisor prompt is in `docs/ADVISOR_PROMPT.md`.
