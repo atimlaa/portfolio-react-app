@@ -148,6 +148,16 @@ test.describe("Keyboard and forms", () => {
     await expect(name).toHaveValue("");
   });
 
+  test("contact section links only to live professional profiles", async ({ page }) => {
+    await dismissBanner(page);
+    await page.goto("#contact");
+    const contact = page.locator("#contact");
+    await expect(contact.locator('a[href*="discord"]')).toHaveCount(0);
+    await expect(contact.getByRole("link", { name: "GitHub" })).toHaveAttribute("href", "https://github.com/atimlaa");
+    await expect(contact.getByRole("link", { name: "LinkedIn" })).toHaveAttribute("href", /linkedin\.com\/in\/aryan-timla/);
+    await expect(contact.getByRole("link", { name: "aryantimla@gmail.com" })).toHaveAttribute("href", "mailto:aryantimla@gmail.com");
+  });
+
   test("mobile menu button is accessible and closes with Escape", async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== "mobile", "mobile only");
     await dismissBanner(page);

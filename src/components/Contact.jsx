@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { HiCheckCircle, HiXCircle } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ const socials = [
   { href: 'https://github.com/atimlaa', icon: FaGithub, label: 'GitHub' },
   { href: 'https://www.linkedin.com/in/aryan-timla/', icon: FaLinkedin, label: 'LinkedIn' },
   { href: 'https://twitter.com/AryanTimla', icon: XIcon, label: 'X' },
-  { href: 'https://discord.gg/jPtRHXGr', icon: FaDiscord, label: 'Discord' },
   { href: 'https://www.instagram.com/aryan_timla/', icon: FaInstagram, label: 'Instagram' },
   { href: 'https://www.facebook.com/aryan.timla/', icon: FaFacebook, label: 'Facebook' },
 ];
